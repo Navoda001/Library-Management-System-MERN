@@ -1,7 +1,7 @@
 //CRUD for Book data handling
 
 async function getAllBooks(){
-    console.log("Get all books....")
+    console.log("Get all books....Service")
 }
 
 async function addBook(){

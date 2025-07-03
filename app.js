@@ -15,11 +15,10 @@
 
 const express = require("express")
 const app = express()
-const PORT = 3600
+const PORT = 3700
+const bookRoutes = require("./routes/BookRoute")
 
-app.get("/",(req,res)=>{
-    res.send("Hello CMJD - 108")
-})
+app.use("/api/v1",bookRoutes)
 
 app.listen(PORT, ()=>{
     console.log(`App Listening to: ${PORT}`)
