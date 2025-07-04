@@ -13,4 +13,4 @@ const bookSchema = new mongoose.Schema({
     avilableQty : {type:Number}
 });
 
-module.exports - mongoose.model("Book",bookSchema);
+module.exports = mongoose.model("Book",bookSchema);
