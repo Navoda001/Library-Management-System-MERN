@@ -1,19 +1,21 @@
 //CRUD for Book data handling
+const Book = require('../model/BookModel')
 
 async function getAllBooks(){
-    console.log("Get all books....Service")
+   return Book.find();
 }
 
-async function addBook(){
-    console.log("Add book....")
+async function addBook(book){
+   const bookData = new Book(book);
+    return bookData.save();
 }
 
-async function deleteBook(){
-    console.log("Delete book....")
+async function deleteBook(bookId){
+     return Book.findAndDelete(bookId)
 }
 
-async function updateBook(){
-    console.log("Update book....")
+async function updateBook(bookId, bookData){
+    return Book.findOneAndUpdate({ bookId:bookId},bookData,{new : true})
 }
 
 module.exports = { getAllBooks, addBook, deleteBook,updateBook }
