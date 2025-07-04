@@ -2,11 +2,12 @@ const express = require("express");
 const res = require("express/lib/response");
 const router = express.Router();
 const bookService = require("../service/BookService");
+const authTokenData = require('../middleWare/AuthToken')
 
 const bookURL = "/books";
 
 //Get all books
-router.get(bookURL, async (req, res) => {
+router.get(bookURL, authTokenData, async (req, res) => {
   try {
     const allBooks = await bookService.getAllBooks();
     console.log("Get all books ", allBooks);

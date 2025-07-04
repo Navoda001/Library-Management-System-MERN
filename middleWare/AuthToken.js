@@ -8,7 +8,7 @@ const authToken = (req,res,next) => {
    console.log(token);
 
    if(!token){
-        return res.staus(401).json({error:"No Token and authorization failed"});
+        return res.status(401).json({error:"No Token and authorization failed"});
    }
    try{
        console.log("JWT secret",jwtSecret)
@@ -17,7 +17,7 @@ const authToken = (req,res,next) => {
        next();
    }catch(err){
        console.error(err)
-       return res.staus(401).json({error:"Invalid Token"})
+       return res.status(401).json({error:"Invalid Token"})
    }
 }
 
