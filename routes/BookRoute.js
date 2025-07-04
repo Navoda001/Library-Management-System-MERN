@@ -10,7 +10,21 @@ router.get(bookURL, async (req, res) => {
   try {
     const allBooks = await bookService.getAllBooks();
     console.log("Get all books ", allBooks);
-    res.json(allBooks);
+    const filterBooks = allBooks.map((book) => ({
+      bookId: book.bookId,
+      bookName: book.bookName,
+      author: book.author,
+      edition: book.edition,
+      publisher: book.publisher,
+      isbn: book.isbn,
+      price: book.price,
+      totalQty: book.totalQty,
+      availableQty: book.availableQty,
+      lastUpdateDate: book.lastUpdateDate,
+      lastUpdateTime: book.lastUpdateTime,
+    }));
+    console.log("Get all books ", filterBooks);
+    res.json(filterBooks);
   } catch (error) {
     res.status(500).json({ error: "Error fetching books" });
   }
