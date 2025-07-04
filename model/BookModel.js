@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const {v4: uuidv4} = require('uuid')
 
 const bookSchema = new mongoose.Schema({
-    bookId:{type:String, default:uuidv4,required:true,unique:true},
+    bookId:{type:String, default:uuidv4,unique:true},
     bookName:{type:String,required:true},
     author: {type:String,required:true},
     edition: {type:String,required:true},
