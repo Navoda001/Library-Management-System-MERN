@@ -45,7 +45,7 @@ router.post(`${authUrl}/signin`,async(req,res) =>{
 router.post(`${authUrl}/signup`,async(req,res)=>{
     const { userId, firstName, lastName, email, password, role } = req.body;
 
-    if(!userId || !firstName || !lastName || !email || !password || !role){
+    if(!firstName || !lastName || !email || !password || !role){
         return res.status(401).json({error: "Missing required field/s" });
     }
     try{

@@ -20,7 +20,7 @@ app.use(cors({
 
 app.use("/booklib/api/v1",bookRoutes)
 app.use("/booklib/api/v1",memberRoutes)
-app.use("/api/v1",authRoutes)
+app.use("/booklib/api/v1",authRoutes)
 
 //DB Integrate
 
