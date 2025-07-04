@@ -35,8 +35,8 @@ router.get(bookURL, authTokenData, async (req, res) => {
 router.post(bookURL, async (req, res) => {
   console.log("Book request.....", req.body);
   try {
-    await bookService.addBook(req.body);
-    return res.status(201).send("Saved Book Successfully");
+    const bookData=await bookService.addBook(req.body);
+    return res.status(201).send(bookData);
   } catch (err) {
     console.error(err);
     res.status(500).send("Internal Server Error");
