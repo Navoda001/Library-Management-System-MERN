@@ -4,6 +4,7 @@ const app = express()
 const bookRoutes = require("./routes/BookRoute")
 const memberRoutes = require("./routes/MemberRoute")
 const authRoutes = require("./routes/AuthRoute")
+const lendingRoutes = require("./routes/LendingRoute")
 const mongoose = require("mongoose");
 const cors = require('cors')
 const PORT = process.env.PORT || 3700
@@ -20,6 +21,7 @@ app.use(cors({
 
 app.use("/booklib/api/v1",bookRoutes)
 app.use("/booklib/api/v1",memberRoutes)
+app.use("/api/v1",lendingRoutes)
 app.use("/booklib/api/v1",authRoutes)
 
 //DB Integrate
